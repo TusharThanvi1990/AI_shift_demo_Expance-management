@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>Expense Tracker</h1>
+      <p class="subtitle">Keep track of where your money goes.</p>
+    </header>
+
+    <!-- Summary: the total of every expense in the list -->
+    <section class="summary">
+      <span class="summary-label">Total spent</span>
+      <span id="total" class="summary-total">₹0</span>
+    </section>
+
+    <!-- Form for adding a new expense -->
+    <section class="card">
+      <h2>Add an expense</h2>
+      <form id="expense-form">
+        <label>
+          What did you spend on?
+          <input id="name" type="text" placeholder="e.g. Lunch with team" required>
+        </label>
+
+        <label>
+          Amount (₹)
+          <input id="amount" type="number" min="1" step="1" placeholder="e.g. 450" required>
+        </label>
+
+        <label>
+          Category
+          <select id="category">
+            <option>Food</option>
+            <option>Transport</option>
+            <option>Shopping</option>
+            <option>Bills</option>
+            <option>Other</option>
+          </select>
+        </label>
+
+        <button type="submit">Add expense</button>
+      </form>
+    </section>
+
+    <!-- The list of expenses, filled in by app.js -->
+    <section class="card">
+      <h2>Your expenses</h2>
+      <ul id="expense-list" class="expense-list"></ul>
+      <p id="empty-message" class="empty-message" hidden>No expenses yet. Add one above!</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

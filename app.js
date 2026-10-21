@@ -53,8 +53,33 @@ function createExpenseItem(expense) {
   amount.className = 'expense-amount';
   amount.textContent = formatMoney(expense.amount);
 
-  item.append(details, amount);
+  const deleteButton = document.createElement('button');
+  deleteButton.type = 'button';
+  deleteButton.className = 'delete-button';
+  deleteButton.textContent = '✕';
+  deleteButton.setAttribute('aria-label', 'Delete ' + expense.name);
+  deleteButton.addEventListener('click', function () {
+    deleteExpense(expense.id);
+  });
+
+  // Keeps the amount and the delete button together on the right.
+  const actions = document.createElement('div');
+  actions.className = 'expense-actions';
+  actions.append(amount, deleteButton);
+
+  item.append(details, actions);
   return item;
+}
+
+// Removes the expense with this id, then redraws the list and total.
+function deleteExpense(id) {
+  const index = expenses.findIndex(function (expense) {
+    return expense.id === id;
+  });
+  if (index !== -1) {
+    expenses.splice(index, 1);
+  }
+  render();
 }
 
 // Redraws the list and the total from the `expenses` array.

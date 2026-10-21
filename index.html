@@ -51,6 +51,20 @@
     <!-- The list of expenses, filled in by app.js -->
     <section class="card">
       <h2>Your expenses</h2>
+
+      <!-- Search and category filter -->
+      <div class="filters">
+        <input id="search" type="search" placeholder="Search expenses..." aria-label="Search expenses">
+        <select id="category-filter" aria-label="Filter by category">
+          <option value="All">All categories</option>
+          <option>Food</option>
+          <option>Transport</option>
+          <option>Shopping</option>
+          <option>Bills</option>
+          <option>Other</option>
+        </select>
+      </div>
+
       <ul id="expense-list" class="expense-list"></ul>
       <p id="empty-message" class="empty-message" hidden>No expenses yet. Add one above!</p>
     </section>

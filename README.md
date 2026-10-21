@@ -24,8 +24,8 @@ project on your GitHub account, so you can push your changes to it.
 Open a terminal and run (replace `YOUR-USERNAME` with your GitHub username):
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/expense-tracker.git
-cd expense-tracker
+git clone https://github.com/YOUR-USERNAME/AI_shift_demo_Expance-management.git
+cd AI_shift_demo_Expance-management
 ```
 
 ## 3. Run the app

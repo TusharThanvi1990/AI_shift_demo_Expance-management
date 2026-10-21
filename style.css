@@ -164,7 +164,7 @@ button:hover {
 /* Search + category filter */
 .filters {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 8px;
   margin-bottom: 8px;
 }
